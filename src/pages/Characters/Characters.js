@@ -13,11 +13,13 @@ function Characters() {
 
   useEffect(() => {
     fetch(`https://gateway.marvel.com:443/v1/public/characters?limit=20&offset=${offset}&apikey=a79cdc2f1f537cac642535152f632819`)
-      .then(response => {
-        console.log(response)
-        setCharacters(response.data.results)
-        setTotal(response.data.total)
-      })
+      // .then(response => {
+      //   console.log(response)
+      //   setCharacters(response.data.results)
+      //   setTotal(response.data.total)
+      // })
+      .then(response => response.json())
+      .then(data => console.log(data))
       .catch(error => console.log(error))
   }, [offset])
 
