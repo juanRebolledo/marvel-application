@@ -13,7 +13,7 @@ function PageContainer({ children, image, text }) {
         <PageHeader image={image} text={text} />
         <div className="data-content">
           <div className="data-content-title">
-            <h4>{text}</h4>
+            <h4>{`${text.substr(0, 19)}...`}</h4>
           </div>
           <div className="data-content-data">
             {children}

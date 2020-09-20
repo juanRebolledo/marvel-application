@@ -12,10 +12,10 @@ function Character() {
 
   useEffect(() => {
     // fetch id
-    fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=a79cdc2f1f537cac642535152f632819`)
-      .then(response => {
-        console.log(response)
-        setCharacter(response.data.results[0])
+    fetch(`https://gateway.marvel.com/v1/public/characters/${id}?apikey=a79cdc2f1f537cac642535152f632819`)
+      .then(response => response.json())
+      .then(({ data }) => {
+        setCharacter(data.results[0])
       })
       .catch(error => console.log(error))
     //setCharacter(result.results[0])
@@ -27,8 +27,8 @@ function Character() {
       {character !== undefined && character !== null ?
         <PageContainer image={`${character.thumbnail.path}.${character.thumbnail.extension}`} title={character.name} text={character.name}>
           <Description description={character.description} />
-          <ContainerScroll title={`Comics of ${character.name}`} type="comic" uri={character.comics.collectionURI} />
-          <ContainerScroll title={`Series of ${character.name}`} type="serie" uri={character.series.collectionURI} />
+          <ContainerScroll title={`Comics of ${character.name}`} type="comic" uri={`${character.comics.collectionURI}?apikey=a79cdc2f1f537cac642535152f632819`} />
+          <ContainerScroll title={`Series of ${character.name}`} type="serie" uri={`${character.series.collectionURI}?apikey=a79cdc2f1f537cac642535152f632819`} />
         </PageContainer>
         : null}
     </>

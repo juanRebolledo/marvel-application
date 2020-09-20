@@ -14,11 +14,11 @@ function Comic() {
   useEffect(() => {
     // fetch id
     fetch(`https://gateway.marvel.com/v1/public/comics/${id}?apikey=a79cdc2f1f537cac642535152f632819`)
-      .then(response => {
-        setComic(response.data.results[0])
+      .then(response => response.json())
+      .then(({data}) => {
+        setComic(data.results[0])
       })
       .catch(error => console.log(error))
-    //setComic(comicData.results[0])
   }, [id])
 
   return (
@@ -30,7 +30,7 @@ function Comic() {
         <PageContainer image={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} title={comic.title} text={comic.title}>
           <Description description={comic.description} />
           <ComicDescription date={comic.dates[0].date} price={comic.prices[0].price} />
-          <ContainerScroll uri={comic.creators.collectionURI} title={`Creators of ${comic.title}`} type="creator" />
+          <ContainerScroll uri={`${comic.creators.collectionURI}?apikey=a79cdc2f1f537cac642535152f632819`} title={`Creators of ${comic.title}`} type="creator" />
         </PageContainer>
         : null}
     </>

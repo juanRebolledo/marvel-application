@@ -10,12 +10,14 @@ function Comics() {
   const [total, setTotal] = useState(undefined)
 
   useEffect(()=>{
-    fetch(`https://gateway.marvel.com:443/v1/public/comics?limit=20&offset=${offset}&apikey=a79cdc2f1f537cac642535152f632819`)
-      .then(response => {
-        setComics(response.data.results)
-        setTotal(response.data.total)
-      })  
-  }, [])
+    fetch(`https://gateway.marvel.com/v1/public/comics?limit=20&offset=${offset}&apikey=a79cdc2f1f537cac642535152f632819`)
+    .then(response => response.json())
+    .then(({data}) => {
+      setComics(data.results)
+      setTotal(data.total)
+    })
+    .catch(error => console.log(error)) 
+  }, [offset])
 
   const handleOffstet = () => {
     if ((offset + 20) > total) return setOffset(0)

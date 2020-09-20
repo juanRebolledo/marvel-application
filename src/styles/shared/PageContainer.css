@@ -25,6 +25,10 @@
   width: 90%;
 }
 
+.description {
+  overflow: auto;
+}
+
 .description p {
   text-align: justify;
 }
