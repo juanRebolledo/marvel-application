@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../public/Fonts/Roboto-Regular.ttf');
+ }
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url('../public/Fonts/Roboto-Medium.ttf');
+ }
+@font-face {
+  font-family: 'RobotoBold';
+  src: url('../public/Fonts/Roboto-Bold.ttf');
+ }
+@font-face {
+  font-family: 'MerriweatherBold';
+  src: url('../public/Fonts/Merriweather-Bold.ttf');
+}
+@font-face {
+  font-family: 'MerriweatherRegular';
+  src: url('../public/Fonts/Merriweather-Regular.ttf');
+}
+@font-face {
+  font-family: 'MerriweatherBlack';
+  src: url('../public/Fonts/Merriweather-Black.ttf');
+}
+@font-face {
+  font-family: 'MerriweatherLight';
+  src: url('../public/Fonts/Merriweather-Light.ttf');
+}

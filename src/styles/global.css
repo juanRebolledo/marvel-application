@@ -1,0 +1,31 @@
+@import './fonts.css';
+@import './colors.css';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'MerriweatherBlack', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+body div {
+  height: 100%;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cccccc7a;
+}

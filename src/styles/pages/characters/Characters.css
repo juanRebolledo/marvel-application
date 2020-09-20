@@ -1,0 +1,11 @@
+.header-image {
+  height: 150px;
+  width: 100%;
+}
+
+.header-image img {
+  object-fit: cover;
+  border-radius: 0;
+  height: 100%;
+  width: 100%;
+}

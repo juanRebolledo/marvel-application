@@ -1,0 +1,27 @@
+.card-container{ 
+  height: 200px;
+  width: calc(100% / 2);
+}
+
+.card-container .card-image, img {
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  object-fit: cover;
+}
+
+.loader {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: #ccc;
+  border-radius: 5px;
+}
+
+.loader .loader-p {
+  background: rgb(156, 156, 156);
+  height: 10%;
+  width: 70%;
+}

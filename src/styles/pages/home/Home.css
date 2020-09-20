@@ -1,0 +1,49 @@
+.container-circle-links {
+  flex-direction: column;
+  height: 90%;
+  width: 100%;
+}
+
+.container-circle-links, 
+.circle-container,
+.circle, .title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  height: 10%;
+  width: 100%;
+}
+
+.circle-container {
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+}
+
+.circle-container h4 {
+  position: absolute;
+  color: #fff;
+  font-size: 2em;
+}
+
+h1, h4 {
+  color: var(--c-primary);
+}
+
+.container-circle-links .circle-container .circle {
+  background: var(--c-primary);
+}
+
+.circle a, .circle img {
+  height: 100%;
+  width: 100%;
+}
+
+.circle a img {
+  object-fit: cover;
+}
+

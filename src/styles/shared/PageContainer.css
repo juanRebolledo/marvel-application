@@ -1,0 +1,39 @@
+.data-content {
+  height: calc(100% - 150px);
+}
+
+.data-content .data-content-title {
+  height: 3em;
+}
+
+.data-content .data-content-title h4 {
+  text-align: center;
+  font-size: 2em;
+}
+
+.data-content .data-content-data {
+  color: var(--c-primary);
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  height: calc(100% - 3em);
+}
+
+.data-content .data-content-data .description, .description-comic {
+  height: 200px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.description p {
+  text-align: justify;
+}
+
+.description-comic {
+  height: 50px;
+}
+
+.description-comic p span {
+  font-family: 'MerriweatherBlack';
+  font-size: 1.5em;
+}

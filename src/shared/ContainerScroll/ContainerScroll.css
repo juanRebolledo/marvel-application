@@ -1,0 +1,9 @@
+.container-scroll {
+  display: flex;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 200px;
+}
+
+.container-scroll::-webkit-scrollbar { display: none; }
