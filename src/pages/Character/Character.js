@@ -14,6 +14,7 @@ function Character() {
     // fetch id
     fetch(`https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=a79cdc2f1f537cac642535152f632819`)
       .then(response => {
+        console.log(response)
         setCharacter(response.data.results[0])
       })
       .catch(error => console.log(error))
