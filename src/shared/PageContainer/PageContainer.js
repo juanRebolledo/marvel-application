@@ -1,25 +1,21 @@
 import React from 'react'
 
 import AppLayout from 'layout/AppLayout'
-import LeftToRigth from 'pages/PageSlide/LeftToRigth'
+import SlideTo from 'pages/PageSlide/SlideTo'
 import PageHeader from 'shared/PageContainer/components/PageHeader/PageHeader'
 
 import 'styles/shared/PageContainer.css'
+import Body from './components/Body/Body'
 
-function PageContainer({ children, image, text }) {
+function PageContainer({ children, image, text, left = false }) {
   return (
     <AppLayout>
-      <LeftToRigth>
-        <PageHeader image={image} text={text} />
-        <div className="data-content">
-          <div className="data-content-title">
-            <h4>{`${text.substr(0, 19)}...`}</h4>
-          </div>
-          <div className="data-content-data">
-            {children}
-          </div>
-        </div>
-      </LeftToRigth>
+      <SlideTo left={left}>
+        <PageHeader alt={text} image={image} />
+        <Body text={text}>
+          {children}
+        </Body>
+      </SlideTo>
     </AppLayout >
   )
 }

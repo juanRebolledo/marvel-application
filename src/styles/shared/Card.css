@@ -1,6 +1,20 @@
-.card-container{ 
+.card-container{
+  position: relative; 
   height: 200px;
   width: calc(100% / 2);
+}
+
+.card-container .card-title {
+  background: rgba(0, 0, 0, 0.3);
+  height: 30px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.card-title p {
+  color: var(--c-primary);
 }
 
 .card-container .card-image, img {
@@ -10,18 +24,4 @@
 
 img {
   object-fit: cover;
-}
-
-.loader {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background: #ccc;
-  border-radius: 5px;
-}
-
-.loader .loader-p {
-  background: rgb(156, 156, 156);
-  height: 10%;
-  width: 70%;
 }

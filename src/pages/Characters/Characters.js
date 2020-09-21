@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 
+import { getCharacters } from 'services/Util/API/getData'
+
 import DataInCards from 'shared/DataInCards/DataInCards'
+import HeaderBottom from 'shared/HeaderBottom/HeaderBottom'
 import PageContainer from 'shared/PageContainer/PageContainer'
 
 import 'styles/pages/characters/Characters.css'
@@ -9,31 +12,38 @@ import 'styles/pages/characters/Characters.css'
 function Characters() {
   const [characters, setCharacters] = useState(undefined)
   const [offset, setOffset] = useState(0)
+  const [nameCharacter, setNameCharacter] = useState('')
   const [total, setTotal] = useState(undefined)
 
   useEffect(() => {
-    fetch(`https://gateway.marvel.com/v1/public/characters?limit=20&offset=${offset}&apikey=a79cdc2f1f537cac642535152f632819`)
-      .then(response => response.json())
-      .then(({data}) => {
-        setCharacters(data.results)
-        setTotal(data.total)
-      })
-      .catch(error => console.log(error))
-  }, [offset])
+    getCharacters(setCharacters, setTotal, offset, nameCharacter)
+  }, [offset, nameCharacter])
 
   const image = require('public/images/characters.jpg')
-  const handleOffstet = () => {
+
+  const nextPage = () => {
     if ((offset + 20) > total) return setOffset(0)
     return setOffset(offset + 20)
   }
 
+  const previousPage = () => {
+    if ((offset - 20) < 0) return setOffset(0)
+    return setOffset(offset - 20)
+  }
+
+  const handleSearchCharacter = ({target}) => {
+    const {value} = target
+    setNameCharacter(value)
+    setOffset(0)
+  }
+
   return (
     <>
-      <Helmet><title>Characters | Marvel</title></Helmet>    
-      <PageContainer image={image} text="Characters" title="Characters">
-        <DataInCards to="character" data={characters} />
+      <Helmet><title>Characters | Marvel</title></Helmet>
+      <PageContainer image={image} left={true} text="Characters">
+        <DataInCards data={characters} to="character" />
       </PageContainer>
-      <button onClick={handleOffstet}>Show 20 more characters</button>
+      <HeaderBottom search={handleSearchCharacter} nextPage={nextPage} previousPage={previousPage}/>
     </>
   )
 }

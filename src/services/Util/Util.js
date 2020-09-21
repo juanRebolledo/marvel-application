@@ -11,10 +11,10 @@ export const pageTransition = {
   duration: 0.3
 };
 
-export const GoLeftToRigth = {
+export const movePage = (sign) => ({
   initial: {
     opacity: 0,
-    x: "100vw",
+    x: `${sign}100vw`,
   },
   in: {
     opacity: 1,
@@ -22,21 +22,13 @@ export const GoLeftToRigth = {
   },
   exit: {
     opacity: 0,
-    x: "100vw",
-  }
-};
-
-export const GoRigthToLeft = {
-  initial: {
-    opacity: 0,
-    x: "-100vw",
-  },
-  in: {
-    opacity: 1,
-    x: 0,
-  },
-  exit: {
-    opacity: 0,
-    x: "-100vw",
+    x: `${sign}100vw`,
   }
 }
+)
+export const slideTo = (bool) => {
+  if (bool) return movePage('')
+  return movePage('-')
+}
+
+export const substr = str => str.length > 15 ? `${str.substr(0, 15)}...` : str

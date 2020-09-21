@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { ImageSizeHome } from 'pages/Util/Util'
+import { ImageSizeHome } from 'services/Util/Util'
 
 const CircleLink = ({text, to, srcImg}) => (
   <div className="circle-container"> 
