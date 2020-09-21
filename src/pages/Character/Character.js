@@ -11,15 +11,13 @@ function Character() {
   const [character, setCharacter] = useState(undefined)
 
   useEffect(() => {
-    // fetch id
     fetch(`https://gateway.marvel.com/v1/public/characters/${id}?apikey=a79cdc2f1f537cac642535152f632819`)
       .then(response => response.json())
       .then(({ data }) => {
         setCharacter(data.results[0])
       })
       .catch(error => console.log(error))
-    //setCharacter(result.results[0])
-  }, [])
+  }, [id])
 
   return (
     <>

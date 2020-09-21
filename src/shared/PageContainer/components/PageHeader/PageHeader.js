@@ -1,9 +1,9 @@
 import React from 'react'
 
-const PageHeader = ({ image }) => (
+const PageHeader = ({ alt, image }) => (
   <>
     <div className="header-image">
-      <img src={image} alt="header" />
+      <img src={image} alt={alt} />
     </div>
   </>
 )

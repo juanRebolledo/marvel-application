@@ -1,11 +1,12 @@
 import React from 'react'
+
 import Card from 'shared/Card/Card'
-import CardLoader from 'shared/Card/CardLoader'
+import Loader from 'shared/Loader/Loader'
 
 const DataInCards = ({data, to}) => (
-  data !== undefined && data !== null ? data.map(({ id, thumbnail }) => (
-    <Card key={id} to={`/${to}/${id}`} thumbnail={thumbnail} />
-  )) : <CardLoader />
+  data !== undefined && data !== null ? data.map(item => (
+    <Card key={item.id} to={`/${to}/${item.id}`} thumbnail={item.thumbnail} title={item.title || item.name} />
+  )) : <Loader />
 )
 
 export default DataInCards
