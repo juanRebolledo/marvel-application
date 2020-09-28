@@ -30,3 +30,7 @@ body div {
 ::-webkit-scrollbar-thumb {
   background: #cccccc7a;
 }
+
+#pocket-extension-root, #pocket-extension-styles {
+  display: none;
+}

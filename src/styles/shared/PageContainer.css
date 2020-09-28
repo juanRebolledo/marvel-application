@@ -25,6 +25,18 @@
   width: 90%;
 }
 
+.header-image {
+  height: 150px;
+  width: 100%;
+}
+
+.header-image img {
+  object-fit: cover;
+  border-radius: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .description {
   overflow: auto;
 }
@@ -40,4 +52,19 @@
 .description-comic p span {
   font-family: 'MerriweatherBlack';
   font-size: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .data-content {
+    height: 100%;
+    width: 70%;
+  }
+
+  .header-image {
+    height: 100%;
+    width: 30%;
+  }
+  .flex-row-in-query {
+    display: flex;
+  }
 }
