@@ -13,12 +13,14 @@ function Home() {
     <AppLayout>
       <Helmet><title>Marvel</title></Helmet>
       <SlideTo>
-        <div className="title">
-          <MarvelLogo />
-        </div>
-        <div className="container-circle-links">
-          <CircleLink text="Personajes" to="characters"/>
-          <CircleLink text="Comics" to="comics"/>
+        <div className="home-container">
+          <div className="title">
+            <MarvelLogo />
+          </div>
+          <div className="container-circle-links">
+            <CircleLink text="Personajes" to="characters"/>
+            <CircleLink text="Comics" to="comics"/>
+          </div>
         </div>
       </SlideTo>
     </AppLayout>

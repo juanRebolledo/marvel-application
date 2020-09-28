@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import Card from 'shared/Card/Card'
 
+import ImageDataNotFound from 'public/images/not-found.png'
+
 import 'shared/ContainerScroll/ContainerScroll.css'
 import Loader from 'shared/Loader/Loader'
 
@@ -19,15 +21,18 @@ function CharacterComics({ title, uri, type }) {
 
   return (
     <>
-      <h2>{`${title.substr(0, 30)}...`}</h2>
+      <h2>{title}</h2>
       <div className="container-scroll">
         {
           data !== undefined && data !== null ?
             data.length > 0 ?
-            data.map(item => (
-              <Card styles={{ minWidth: '240px' }} key={`${type}-${item.id}`} to={`/${type}/${item.id}`} thumbnail={item.thumbnail} title={item.title || item.name || item.fullName} />
-            ))
-            : <p>No hay informacion relacionada desde el servidor</p>
+              data.map(item => (
+                <Card styles={{ minWidth: '240px' }} key={`${type}-${item.id}`} to={`/${type}/${item.id}`} thumbnail={item.thumbnail} title={item.title || item.name || item.fullName} />
+              ))
+              : <div style={{display: 'flex'}}><img alt="not found" src={ImageDataNotFound} style={{
+                margin: 'auto',
+                width: '200px'
+              }} /></div>
             : <Loader />
         }
       </div>

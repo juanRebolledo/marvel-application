@@ -9,6 +9,7 @@ const SlideTo = ({ left, children }) => (
     animate={slideTo(left).in}
     exit={slideTo(left).exit}
     transition={pageTransition}
+    className="flex-row-in-query"
   >
     {children}
   </motion.div>
