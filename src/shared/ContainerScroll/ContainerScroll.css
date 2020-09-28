@@ -1,9 +1,17 @@
 .container-scroll {
+  align-items: center;
   display: flex;
+  flex-direction: column;
+  height: calc(100% - 200px);
+}
+
+.container-scroll-cards {
+  display: flex;
+  height: 350px;
   margin-bottom: 20px;
   overflow-x: auto;
   overflow-y: hidden;
-  height: 200px;
+  width: 90%;
 }
 
 .container-scroll::-webkit-scrollbar { display: none; }

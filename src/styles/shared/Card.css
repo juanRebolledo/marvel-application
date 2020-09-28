@@ -15,6 +15,11 @@
 
 .card-title p {
   color: var(--c-primary);
+  margin: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80%;
 }
 
 .card-container .card-image, img {

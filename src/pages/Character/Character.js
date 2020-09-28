@@ -26,7 +26,6 @@ function Character() {
         <PageContainer image={`${character.thumbnail.path}.${character.thumbnail.extension}`} title={character.name} text={character.name}>
           <Description description={character.description} />
           <ContainerScroll title={`Comics of ${character.name}`} type="comic" uri={`https://gateway.marvel.com/v1/public/characters/${character.id}/comics?apikey=a79cdc2f1f537cac642535152f632819`} />
-          <ContainerScroll title={`Series of ${character.name}`} type="serie" uri={`https://gateway.marvel.com/v1/public/characters/${character.id}/comics?apikey=a79cdc2f1f537cac642535152f632819`} />
         </PageContainer>
         : null}
     </>
