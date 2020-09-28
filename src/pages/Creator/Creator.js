@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useParams } from 'react-router-dom'
+
 import Loader from 'shared/Loader/Loader'
 import PageContainer from 'shared/PageContainer/PageContainer'
-import ContainerScroll from 'shared/ContainerScroll/ContainerScroll'
 import DataInCards from 'shared/DataInCards/DataInCards'
-import { getComics } from 'services/Util/API/getData'
 
+import { getComics } from 'services/Util/API/getData'
 
 function Creator() {
   const { id } = useParams()
@@ -15,7 +15,6 @@ function Creator() {
   const [total, setTotal] = useState(0)
 
   useEffect(() => {
-    // fetch id
     fetch(`https://gateway.marvel.com/v1/public/creators/${id}?apikey=a79cdc2f1f537cac642535152f632819`)
       .then(response => response.json())
       .then(({ data }) => {

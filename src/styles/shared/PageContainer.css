@@ -15,8 +15,9 @@
   color: var(--c-primary);
   display: flex;
   flex-wrap: wrap;
-  overflow-y: auto;
+  justify-content: center;
   height: calc(100% - 3em);
+  overflow-y: auto;
 }
 
 .data-content .data-content-data .description, .description-comic {

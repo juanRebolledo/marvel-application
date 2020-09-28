@@ -16,6 +16,7 @@ function Characters() {
   const [total, setTotal] = useState(undefined)
 
   useEffect(() => {
+    setCharacters(undefined)
     getCharacters(setCharacters, setTotal, offset, nameCharacter)
   }, [offset, nameCharacter])
 
