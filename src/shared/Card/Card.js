@@ -14,4 +14,4 @@ function Card({title, to, thumbnail, styles}) {
   )
 }
 
-export default Card
+export default React.memo(Card)

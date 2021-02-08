@@ -1,5 +1,4 @@
 .container-circle-links {
-  flex-direction: column;
   height: 90%;
   width: 100%;
 }
@@ -20,7 +19,7 @@
 .circle-container {
   flex-direction: column;
   justify-content: center;
-  height: 50%;
+  height: 100%;
   width: 100%;
 }
 
@@ -47,3 +46,8 @@ h1, h4 {
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .container-circle-links {
+    flex-direction: column;
+  }
+}

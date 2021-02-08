@@ -11,7 +11,7 @@ export const pageTransition = {
   duration: 0.3
 };
 
-export const movePage = (sign) => ({
+export const movePage = (sign = '') => ({
   initial: {
     opacity: 0,
     x: `${sign}100vw`,
@@ -27,7 +27,7 @@ export const movePage = (sign) => ({
 }
 )
 export const slideTo = (bool) => {
-  if (bool) return movePage('')
+  if (bool) return movePage()
   return movePage('-')
 }
 

@@ -1,11 +1,16 @@
 .card-container{
-  position: relative; 
-  height: 200px;
-  width: calc(100% / 2);
+  border: 5px solid #fff;
+  height: 250px;
+  margin: 0 2.5% 5% 2.5%;
+  padding: 4px;
+  position: relative;
+  width: 40%;
 }
 
 .card-container .card-title {
   background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  font-family: 'RobotoBold';
   height: 30px;
   top: 0;
   left: 0;
