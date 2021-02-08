@@ -11,31 +11,32 @@ import 'styles/pages/characters/Characters.css'
 
 function Characters() {
   const [characters, setCharacters] = useState(undefined)
-  const [offset, setOffset] = useState(0)
   const [nameCharacter, setNameCharacter] = useState('')
-  const [total, setTotal] = useState(undefined)
+  const [counts, setCounts] = useState({ offset: 0, total: 0 })
 
   useEffect(() => {
     setCharacters(undefined)
-    getCharacters(setCharacters, setTotal, offset, nameCharacter)
-  }, [offset, nameCharacter])
+    getCharacters(setCharacters, setCounts, counts.offset, nameCharacter)
+  }, [counts.offset, nameCharacter])
 
   const image = require('public/images/characters.jpg')
 
+  const handlerOffset = (offset) => setCounts((prevState) => ({...prevState, offset}))
+
   const nextPage = () => {
-    if ((offset + 20) > total) return setOffset(0)
-    return setOffset(offset + 20)
+    if ((counts.offset + 20) > counts.total) return handlerOffset(0)
+    return handlerOffset(counts.offset + 20)
   }
 
   const previousPage = () => {
-    if ((offset - 20) < 0) return setOffset(0)
-    return setOffset(offset - 20)
+    if ((counts.offset + 20) > counts.total) return handlerOffset(0)
+    return handlerOffset(counts.offset - 20)
   }
 
   const handleSearchCharacter = ({target}) => {
     const {value} = target
     setNameCharacter(value)
-    setOffset(0)
+    handlerOffset(0)
   }
 
   return (

@@ -18,7 +18,12 @@
   font-family: 'Roboto';
   text-align: center;
   height: 100%;
+  outline: none;
   width: 100%;
+}
+
+.search-container input:focus {
+  border: 1px solid var(--b-red);
 }
 
 .footer-navigation .offset-container {

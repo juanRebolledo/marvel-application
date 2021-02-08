@@ -30,7 +30,7 @@ function Creator() {
       <Helmet>
         <title>Creator | {creator !== undefined && creator !== null ? creator.fullName : ''}</title>
       </Helmet>
-      {creator !== undefined && creator !== null ?
+      {creator ?
         <PageContainer
           image={`${creator.thumbnail.path}.${creator.thumbnail.extension}`}
           title={creator.title}

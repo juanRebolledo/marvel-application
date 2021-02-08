@@ -5,10 +5,16 @@
   height: calc(100% - 200px);
 }
 
+.container-scroll h2 {
+  font-family: 'Lato Bold';
+  font-size: 20px;
+  margin-bottom: 1%;
+  text-align: center;
+}
+
 .container-scroll-cards {
   display: flex;
-  height: 350px;
-  margin-bottom: 20px;
+  height: 90%;
   overflow-x: auto;
   overflow-y: hidden;
   width: 90%;

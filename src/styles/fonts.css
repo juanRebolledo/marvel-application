@@ -26,3 +26,7 @@
   font-family: 'MerriweatherLight';
   src: url('../public/Fonts/Merriweather-Light.ttf');
 }
+@font-face {
+  font-family: 'Lato Bold';
+  src: url('../public/Fonts/Lato-Bold.ttf');
+}

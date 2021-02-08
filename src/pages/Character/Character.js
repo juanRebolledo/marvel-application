@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 import PageContainer from 'shared/PageContainer/PageContainer'
-import Description from '../../shared/PageContainer/components/Description/Description'
+import Description from 'shared/PageContainer/components/Description/Description'
 import ContainerScroll from 'shared/ContainerScroll/ContainerScroll'
-import { Helmet } from 'react-helmet'
 
 function Character() {
   const { id } = useParams()
@@ -21,7 +21,7 @@ function Character() {
 
   return (
     <>
-      <Helmet><title>Character | {character !== undefined && character !== null ? character.name : ''}</title></Helmet>
+      <Helmet><title>{character ? character.name : 'Loading'}</title></Helmet>
       {character !== undefined && character !== null ?
         <PageContainer image={`${character.thumbnail.path}.${character.thumbnail.extension}`} title={character.name} text={character.name}>
           <Description description={character.description} />
